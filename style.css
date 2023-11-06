@@ -107,6 +107,66 @@ button {
 }
 
 /* ____NAVIGATION _______   */
+
+.search-bar {
+    position: absolute;
+    top: 10rem;
+    width: 100%;
+    height: 6rem;
+    background-color: white;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: -1px 12px 37px 3px rgba(0,0,0,0.67);
+-webkit-box-shadow: -1px 12px 37px 3px rgba(0,0,0,0.67);
+-moz-box-shadow: -1px 12px 37px 3px rgba(0,0,0,0.67);
+transition: all 300ms ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+.search {
+    margin-left: 5rem;
+    min-width: 15rem;
+    display: flex;
+    align-items: center;
+}
+
+.search img {
+    margin:1rem;
+    width: 3rem;
+    height: auto;
+}
+
+.search input {
+    outline: none;
+    font-size: 2rem;
+    border: none;
+}
+
+.close-search {
+    margin: 0 4rem;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.714);
+}
+
+
 .nav {
     position: absolute;
     top: 0;
@@ -204,57 +264,6 @@ button {
         display: none;
     }
 }
-
-.search-bar {
-    min-width: 40rem;
-    position: absolute;
-    top: 9rem;
-    left: -40rem;
-    display: flex;
-    /* transition: all 200ms ease-in-out; */
-    animation: searchbar 500ms ease-in-out;
-}
-
-.hidden {
-    display: none;
-}
-
-@keyframes searchbar {
-    0% {
-        opacity: 0;
-        left: 40rem;
-    } 
-
-    100% {
-        opacity: 1;
-        left: -40rem;
-    }
-}
-
-.search-bar input {
-    padding-left: 2rem;
-    border: unset;
-    height: 3rem;
-    min-width: 30rem;
-    outline: none;
-    border-radius: 100rem 0 0 100rem;
-    border: 1px solid gray;
-
-}
-
-.search-bar button {
-     height: 3rem;
-     width: 10rem;
-     background-color: #000;
-     color: #FFF;
-     border-radius: 0 100rem 100rem 0;
-     border-top: 1px solid gray;
-     border-right: 1px solid gray;
-     border-bottom: 1px solid gray;
-}
-
-
-
 
 /* ____MOBILE NAVIGATION _______   */
 

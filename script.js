@@ -125,14 +125,23 @@ tabsContainer.addEventListener('click', (e) => {
 
 const searchBtn = document.querySelector('.search-btn');
 const searchBar = document.querySelector('.search-bar');
+const closeSearchBtn = document.querySelector('.close-search');
+const overlay = document.querySelector('.overlay');
 
 searchBtn.addEventListener('click', (e) => {
+  console.log('CLICK')
   if (searchBar.classList.contains('hidden')) {
-    searchBar.style.right = "-40rem";
     searchBar.classList.remove("hidden");
+    overlay.classList.remove("hidden");
+
   } else {
-    searchBar.style.right = "-300rem";
     searchBar.classList.add("hidden");
+    overlay.classList.add("hidden");
   }
   
+})
+
+closeSearchBtn.addEventListener('click', (e) => {
+  searchBar.classList.add("hidden");
+  overlay.classList.add("hidden");
 })

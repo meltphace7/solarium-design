@@ -31,10 +31,6 @@
         <div class="icon_container">
           <button class="search-btn"><img src="assets/icons/search-outline.svg" alt="search" /></button>
           <a href="#"><img src="assets/icons/cart-outline.svg" alt="cart" /></a>
-          <div class="search-bar hidden">
-            <input type="text" />
-            <button>Search</button>
-          </div>
         </div>
         <div class="menu-wrap">
           <input type="checkbox" class="toggler">
@@ -55,6 +51,15 @@
           </div>
         </div>
       </nav>
+      <div class="search-bar hidden">
+        <div class="search">
+          <img src="assets/icons/search-outline-dark.svg" alt="search" />
+          <input type="text" placeholder="Search..." />
+        </div>
+        <button class="close-search">
+          X
+        </button>
+      </div>
        <header class="header">
           <h1 class="header-slogan">ILLUMINATE YOUR<br>WORLD</h1>
        </header>
@@ -171,11 +176,6 @@
         <li><a ref="#">Reddit</a></li>
       </ul>
     </footer>
-    <!-- <ul class="mobile-menu">
-          <li><a href="#">Tents</a></li>
-              <li><a href="#">Backpacks</a></li>
-              <li><a href="#">Shells</a></li>
-              <li><a href="#">Apparel</a></li>
-        </ul> -->
+    <div class="overlay hidden"></div>
   </body>
 </html>
