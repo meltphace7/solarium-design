@@ -1,0 +1,1 @@
+A theme design for an online store
