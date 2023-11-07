@@ -41,7 +41,7 @@ _____*/
   --color-secondary: rgb(125, 12, 4);
   --color-tertiary: #fcf76e;
   --color-body-bg: #1f1f1f;
-  --color-footer-bg: #1f1f1f;
+  --color-footer-bg: #0e0e0e;
 }
 
 /*  ___ GLOBAL RESET  _____*/
@@ -81,7 +81,7 @@ html {
 
 body {
   font-family: "Clash_Display";
- 
+
   /* position: relative;
   display: flex;
   flex-direction: column;
@@ -550,7 +550,7 @@ button {
   background-size: cover;
   /*___ PARALLAX EFFECT BELOW ____*/
   transform-style: preserve-3d;
-  z-index: -1;
+  z-index: -2;
   transform: translateZ(-5px) scale(1.5);
 }
 
@@ -607,6 +607,7 @@ button {
   align-items: center;
   transition: all 500ms ease-in;
   background-color: var(--color-body-bg);
+  z-index: 3;
 }
 
 .section--hidden {
@@ -641,18 +642,28 @@ button {
   line-height: 2.25rem;
 }
 
+@media (max-width: 50em) {
+  .section-text-title {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .section-text-container {
+    width: 90%;
+  }
+}
+
 /* _____________ SECTION-1: PRODUCTS ________________________________*/
 
 .section-products {
   justify-content: center;
   min-height: 90rem;
-  /* padding-bottom: 10rem; */
-  z-index: 2;
 }
 
 .section-text-container__products {
-    position: relative;
+  position: relative;
   padding-left: 8rem;
+  margin-right: 1rem;
   top: -10rem;
 }
 
@@ -664,7 +675,6 @@ button {
 }
 
 .section-products__products-container {
-  /* margin-top: 25rem; */
   width: 55%;
   display: flex;
   align-content: center;
@@ -718,22 +728,48 @@ button {
     width: 100%;
   }
 
+  .section-text-container__products {
+    position: relative;
+    padding-left: 0rem;
+    top: 0rem;
+  }
+
   .section-products__products-container {
     margin-top: 3rem;
     width: 100%;
+  }
+
+  .product-item {
+    min-width: 15rem;
+    height: 40rem;
+  }
+
+  .product-item__img-container {
+    margin-bottom: 0rem;
+  }
+
+  .product-item h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .product-item h2 span {
+    font-size: 2rem;
   }
 }
 
 /* _____________ SECTION-2: SPLIT-FEATURE-BANNER _________________________   */
 
 .split-banner {
+      position: relative;
+
   width: 100%;
   height: 75rem;
   background-image: url("./assets/imgs/PURPLE_MTNS.jpg");
   background-size: cover;
-  box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
--webkit-box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
+  box-shadow: 2px 6px 15px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 6px 15px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 6px 15px -1px rgba(0, 0, 0, 0.75);
 }
 
 .split-banner__text {
@@ -744,6 +780,9 @@ button {
 }
 
 .text__overlay {
+    position: absolute;
+
+
   width: 100%;
   height: 100%;
   padding-left: 8rem;
@@ -766,7 +805,7 @@ button {
 /* _____________ SECTION-3: OUR STORY_________________________   */
 
 .section-story {
-   justify-content: center;
+  justify-content: center;
 }
 
 .story-container {
@@ -781,19 +820,30 @@ button {
   height: auto;
 }
 
+@media (max-width: 50em) {
+  .section-story {
+    margin-bottom: 5rem;
+  }
+  .story-container {
+    flex-direction: column;
+  }
+
+  .story-container img {
+    width: 90%;
+  }
+}
 /* _____________ SECTION-4: TRI-FEATURE-BANNER_________________________   */
 
 .section-tri-feature {
-min-height: 120rem;
-box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
--webkit-box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
--moz-box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
-
+  min-height: 120rem;
+  box-shadow: 2px 6px 15px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 2px 6px 15px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 2px 6px 15px -1px rgba(0, 0, 0, 0.75);
 }
 
 .tri-feature__container {
   width: 100%;
-  height: 100%;
+  min-height: 120;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -804,17 +854,11 @@ box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
   height: 40rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.tri-feature img {
-  width: 50%;
 }
 
 .tri-feature_text {
   width: 50%;
-  height: 100%;
+  height: 40rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -855,9 +899,55 @@ box-shadow: 2px 6px 15px -1px rgba(0,0,0,0.75);
   margin-top: 2rem;
 }
 
+.tri-feature_img-container {
+  width: 50%;
+  height: 100%;
+}
+
+.tri-feature_img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 45em) {
+  .section-tri-feature {
+    min-height: 180rem;
+  }
+
+  .tri-feature {
+    height: 60rem;
+  }
+
+  .tri-feature-1,
+  .tri-feature-3 {
+    flex-direction: column-reverse;
+  }
+
+  .tri-feature-2 {
+    flex-direction: column;
+  }
+
+  .tri-feature_img-container {
+    width: 100%;
+    height: 50%;
+  }
+
+  .tri-feature_text {
+    width: 100%;
+    height: 50%;
+  }
+
+  .tri-feature_text-overlay h2 {
+    font-size: 3rem;
+    font-weight: bold;
+  }
+}
+
 /* _____________ FOOTER ________________________________*/
 
-footer {
+.footer {
+  padding: 5rem 0;
   margin-top: 5rem;
   width: 100%;
   min-height: 15rem;
@@ -866,12 +956,12 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid #fff;
 }
 
 @media (max-width: 35em) {
-  footer {
+  .footer {
     flex-direction: column;
+    min-height: 25rem;
   }
 }
 
