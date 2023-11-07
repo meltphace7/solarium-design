@@ -19,6 +19,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Clash_Display";
+  src: url("./assets/fonts/ClashDisplay-Semibold.woff2") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
 :root {
   --color-primary: rgb(182, 35, 9);
   --color-secondary: rgb(125, 12, 4);
@@ -106,6 +113,10 @@ a {
   text-decoration: none;
   color: unset;
   cursor: pointer;
+}
+
+a:visited {
+    color: unset;
 }
 
 button {
@@ -236,13 +247,11 @@ button {
   top: 0;
   width: 100%;
   height: 12rem;
-  /* background-color: var(--color-primary); */
   color: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 2;
-  /* backdrop-filter: blur(10px); */
 }
 
 .nav-menu {
@@ -557,12 +566,10 @@ button {
     }
 }
 
-
-
 /* _____________ SECTION ________________________________*/
 .section {
   width: 100%;
-  min-height: 80rem;
+  min-height: 40rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -574,98 +581,79 @@ button {
   transform: translateY(8rem);
 }
 
-/* _____________ SECTION - PRODUCTS ______________________________   */
+/* _____________ PRODUCTS ________________________________*/
 
-.section-1 {
-  width: 100%;
-  color: #ffffff;
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 10%,
-    rgba(62, 62, 62, 1) 47%,
-    rgba(167, 167, 167, 1) 98%
-  );
+.section-products {
+    min-height: 80rem;
+    justify-content: center;
 }
 
-.products {
-  min-width: 90%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  padding: 4rem;
+.section-products__title {
+  color: rgb(176, 176, 176);
+  font-size: 8rem;
+  font-weight: 500;
+  letter-spacing: .25rem;
+  margin-bottom: 5rem;
 }
 
-.product {
-  width: 30rem;
-  height: 45rem;
-  margin: 1rem;
-  border-radius: 5px;
-  box-shadow: -1px 10px 44px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: -1px 10px 44px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -1px 10px 44px 0px rgba(0, 0, 0, 0.75);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden;
+.underline-accent {
+    width: 9rem;
+    height: .3rem;
+    background-color: var(--color-tertiary);
 }
 
-.product_image-container {
-  width: 100%;
-  overflow: hidden;
-  object-fit: cover;
-  display: flex;
-  align-items: center;
-  justify-tracks: center;
+.section-products__container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.product_image-container img {
-  transition: all 300ms;
+.section-products__text-container {
+    width: 45%;
+    height: 100%;
+    padding-left: 8rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.product:hover .product_image-container img {
-  transform: scale(1.2);
+.section-products__text-container p {
+    margin: 3rem 0;
+    line-height: 2.25rem;
 }
 
-.product-info {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #fff;
-  padding: 1rem;
+.section-products__products-container {
+    margin-top: 25rem;
+    width: 50%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
 }
 
-.product_title {
-  color: #000;
+.product-item {
+    margin: .5rem;
+    min-width: 18rem;
+    height: 50rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
 }
 
-.product_description {
-  color: rgb(72, 72, 72);
-  margin: 1rem 0rem 1rem 0;
-  height: 3.5rem;
-  max-height: 3.5rem;
-  overflow: hidden;
+.product-item__img-container {
+    width: 100%;
+    height: 75%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    object-fit: cover;
 }
 
-.product_price {
-  color: var(--color-secondary);
+.product-item h2 {
+    margin-bottom: auto;
 }
 
-.product button {
-  margin: 1rem;
-  padding: 0.5rem 1rem;
-  height: 4rem;
-  width: 15rem;
-  border-radius: 50rem;
-  background-color: rgb(208, 208, 208);
-  color: #000;
-}
 
-.product button:hover {
-  background-color: var(--color-tertiary);
-}
+
 
 /* _____________ SECTION - FEATURED-COLLECTION_________________________   */
 
@@ -688,7 +676,7 @@ button {
     width: 100%;
     height: 100%;
     padding-left: 8rem;
-    background-color: rgba(0, 0, 0, 0.336);
+    background-color: rgba(0, 0, 0, 0.808);
       display: flex;
     flex-direction: column;
    justify-content: center;
