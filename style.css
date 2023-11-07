@@ -12,10 +12,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Clash_Display";
+  src: url("./assets/fonts/ClashDisplay-Extralight.woff2") format("woff");
+  font-weight: 100;
+  font-style: normal;
+}
+
 :root {
   --color-primary: rgb(182, 35, 9);
   --color-secondary: rgb(125, 12, 4);
   --color-tertiary: #fcf76e;
+  --color-body-bg: #1f1f1f;
+  --color-footer-bg: #1f1f1f;
 }
 
 /*  ___ GLOBAL RESET  _____*/
@@ -60,7 +69,7 @@ body {
   flex-direction: column;
   align-items: center;
   overflow-x: hidden;
-  background: #000000;
+  background: var(--color-body-bg);
   color: #fff;
 }
 
@@ -71,6 +80,7 @@ input,
 textarea,
 div {
   font-size: 1.6rem;
+  font-family: inherit;
 }
 
 h1 {
@@ -115,10 +125,12 @@ button {
   justify-content: center;
   align-items: center;
   border: 1px solid var(--color-tertiary);
+  transition: all 250ms ease-in;
 }
 
 .button:hover {
   border: 1px solid #fff;
+  background-color: black;
 }
 
 /* _____________ LOGO ________________________________*/
@@ -179,7 +191,7 @@ button {
 
 .search {
   margin-left: 5rem;
-  min-width: 15rem;
+  min-width: 40rem;
   display: flex;
   align-items: center;
 }
@@ -193,7 +205,8 @@ button {
 
 .search input {
   outline: none;
-  font-size: 2rem;
+  width: 100%;
+  font-size: 3rem;
   border: none;
 }
 
@@ -215,7 +228,7 @@ button {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.493);
   opacity: 1;
-  transition: all 300ms ease-in;
+  transition: all 600ms ease-in;
 }
 
 .nav {
@@ -259,6 +272,7 @@ button {
   margin-bottom: 1rem;
   font-size: 2.6rem;
   text-shadow: 4px 4px 11px rgba(0, 0, 0, 0.63);
+  font-weight: 100;
 }
 
 .nav-menu li a span img {
@@ -508,9 +522,11 @@ button {
 }
 
 .header-slogan {
-  color: var(--color-tertiary);
+  color: transparent;
   font-size: 8rem;
-  text-shadow: 4px 4px 11px rgba(0, 0, 0, 0.63);
+  background-image: linear-gradient(to right, #fff, var(--color-tertiary));
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 @keyframes slogan {
@@ -655,14 +671,14 @@ button {
 
 .featured-collection {
     width: 100%;
-    height: 80rem;
+    height: 75rem;
     background-image: url('./assets/imgs/PURPLE_MTNS.jpg');
     background-size: cover;
 }
 
 .featured-collection__text {
     width: 70%;
-    height: 80rem;
+    height: 75rem;
     clip-path: polygon(0% 0%, 100% 0, 70% 100%, 0% 100%);
      background-image: url('./assets/imgs/abstract-fractal-3.jpg');
 
@@ -682,6 +698,75 @@ button {
     font-size: 6rem;
     font-weight: bold;
     letter-spacing: .3rem;
+}
+
+.text__overlay a {
+    margin-top: 2rem;
+}
+
+/* _____________ SECTION - TRI-FEATURE_________________________   */
+
+.tri-feature__container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.tri-feature {
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tri-feature img{
+    width: 50%;
+}
+
+.tri-feature_text {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tri-feature_text-1 {
+    background-image: url('./assets/imgs/dark-abstract-1.jpg');
+    background-size: cover;
+}
+
+.tri-feature_text-2 {
+    background-image: url('./assets/imgs/dark-abstract-2.jpg');
+    background-size: cover;
+}
+
+.tri-feature_text-3 {
+    background-image: url('./assets/imgs/dark-abstract-3.jpg');
+    background-size: cover;
+}
+
+.tri-feature_text-overlay {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.349);
+}
+
+.tri-feature_text-overlay h2 {
+   font-size: 4rem;
+   font-weight: bold;
+}
+
+.tri-feature_text-overlay a {
+    margin-top: 2rem;
 }
 
 /* _____________ SECTION-2 - SLIDER ________________________________*/
@@ -745,15 +830,16 @@ img {
 
 .dot {
   margin: 0.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2rem;
+  height: 2rem;
   border-radius: 100rem;
   border: 1px solid white;
   transition: all 250ms ease-in;
 }
 
 .dot--active {
-  background-color: #ffffff;
+  background-color: var(--color-tertiary);
+  border: 1px solid var(--color-tertiary);
 }
 
 /* _______SECTION-3 TABBED COMPONENT ______________________________*/
@@ -855,7 +941,7 @@ img {
 footer {
   width: 100%;
   min-height: 15rem;
-  background-color: black;
+  background-color: var(--color-footer-bg);
   color: white;
   display: flex;
   align-items: center;
