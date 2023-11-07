@@ -619,7 +619,7 @@ button {
   font-size: 8rem;
   font-weight: 500;
   letter-spacing: 0.25rem;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
 }
 
 .underline-accent {
@@ -662,7 +662,7 @@ button {
   position: relative;
   padding-left: 8rem;
   margin-right: 1rem;
-  top: -10rem;
+  top: -20rem;
 }
 
 .section-products__container {
@@ -878,12 +878,12 @@ button {
 }
 
 .tri-feature_text-2 {
-  background-image: url("./assets/imgs/dark-abstract-2.jpg");
+  background-image: url("./assets/imgs/dark-abstract-3.jpg");
   background-size: cover;
 }
 
 .tri-feature_text-3 {
-  background-image: url("./assets/imgs/dark-abstract-3.jpg");
+  background-image: url("./assets/imgs/dark-abstract-2.jpg");
   background-size: cover;
 }
 
