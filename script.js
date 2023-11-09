@@ -47,3 +47,41 @@ closeSearchBtn.addEventListener('click', (e) => {
   searchBar.classList.add("hidden");
   overlay.classList.add("hidden");
 })
+
+
+//// PRODUCT CATEGORY SLIDER ////
+
+const productTabContainer = document.querySelector(".product-slider-tabs");
+const productSlides = document.querySelectorAll(".product-collection");
+const lineSelector = document.querySelector('.line-selector')
+
+productTabContainer.addEventListener('click', (event) => {
+  const clicked = event.target.closest(".product-slider-tab");
+  if (!clicked) return;
+  console.log(clicked);
+  console.log(clicked.dataset.tab);
+
+  // ___ REMOVE ACTIVE CLASS FROM TABS AND SLIDES //
+  document
+    .querySelectorAll(".product-slider-tab")
+    .forEach((tab) => tab.classList.remove("product-slider-tab--active"));
+  productSlides.forEach((slide) =>
+    slide.classList.remove("product-collection--active")
+  );
+
+  // ___ MOVE LINE SELECTOR UNDER ACTIVE TAB //
+  if (clicked.dataset.tab === '1') {
+    lineSelector.style.transform = `translateX(${100 * clicked.dataset.tab}%)`;
+  }
+  
+
+  // ___ ADD ACTIVE CLASS FROM TABS AND SLIDES //
+  document
+    .querySelector(`.product-slider-tab[data-tab="${clicked.dataset.tab}"]`)
+    .classList.add("product-slider-tab--active");
+
+  document
+    .querySelector(`.product-collection-${clicked.dataset.tab}`)
+    .classList.add("product-collection--active");
+}
+)

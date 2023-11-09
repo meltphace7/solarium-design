@@ -952,6 +952,117 @@ button {
   }
 }
 
+/* _____________ SECTION-5: PRODUCT - SLIDER _________________________   */
+
+.product-slider-component {
+  margin: 2rem 0rem;
+  width: 95%;
+  min-height: 75rem;
+
+}
+
+.product-slider-tabs {
+  width: 100%;
+  min-height: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.line {
+  padding: 0 7%;
+  width: 100%;
+  height: .2rem;
+  background-color: gray;
+}
+
+.line-selector {
+  width: 20rem;
+  height: 100%;
+  background-color: var(--color-primary);
+  transition: all 300ms ease-in;
+}
+
+.product-slider-tab {
+  text-transform: uppercase;
+  color: gray;
+   font-size: 4rem;
+  font-weight: 500;
+  min-width: 15rem;
+}
+
+.product-slider-tab--active {
+  color: var(--color-primary);
+}
+
+.product-slider-products {
+  position: relative;
+  width: 100%;
+  min-height: 60rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-collection {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-collection--active {
+  display: flex;
+}
+
+.product-slider-product {
+  margin: 1rem;
+  height: 50rem;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(72, 72, 72);
+  box-shadow: -2px 13px 23px -3px rgba(0,0,0,0.44);
+-webkit-box-shadow: -2px 13px 23px -3px rgba(0,0,0,0.44);
+-moz-box-shadow: -2px 13px 23px -3px rgba(0,0,0,0.44);
+border: 1px solid gray;
+
+}
+
+.product-slider-product-img-container {
+width: 100%;
+height: 75%;
+overflow: hidden;
+}
+.product-slider-product-img-container img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.product-slider-product-text {
+  width: 100%;
+  height: 25%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  background-color: rgb(33, 33, 33);
+  border-radius: 2px;
+}
+
+.product-slider-product-text h2 {
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: auto;
+}
+
+.product-slider-product-text h3 {
+  font-size: 1.8rem;
+}
+
 /* _____________ FOOTER ________________________________*/
 
 .footer {
