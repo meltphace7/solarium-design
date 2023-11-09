@@ -961,23 +961,38 @@ button {
 
 }
 
-.product-slider-tabs {
+.product-slider-tabs-contanier {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-slider-tabs {
+  width: 80%;
   min-height: 10rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .line {
-  padding: 0 7%;
   width: 100%;
   height: .2rem;
   background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.line-selector-container {
+  width: 90%;
+  height: .2rem;
 }
 
 .line-selector {
-  width: 20rem;
+  width: 33.333%;
   height: 100%;
   background-color: var(--color-primary);
   transition: all 300ms ease-in;
@@ -986,7 +1001,8 @@ button {
 .product-slider-tab {
   text-transform: uppercase;
   color: gray;
-   font-size: 4rem;
+   font-size: 3rem;
+   letter-spacing: .25rem;
   font-weight: 500;
   min-width: 15rem;
 }
@@ -1026,7 +1042,9 @@ button {
   box-shadow: -2px 13px 23px -3px rgba(0,0,0,0.44);
 -webkit-box-shadow: -2px 13px 23px -3px rgba(0,0,0,0.44);
 -moz-box-shadow: -2px 13px 23px -3px rgba(0,0,0,0.44);
+border-radius: 2px;
 border: 1px solid gray;
+overflow: hidden;
 
 }
 

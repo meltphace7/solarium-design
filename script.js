@@ -58,8 +58,9 @@ const lineSelector = document.querySelector('.line-selector')
 productTabContainer.addEventListener('click', (event) => {
   const clicked = event.target.closest(".product-slider-tab");
   if (!clicked) return;
+  const curSlide = clicked.dataset.tab;
   console.log(clicked);
-  console.log(clicked.dataset.tab);
+  console.log(curSlide);
 
   // ___ REMOVE ACTIVE CLASS FROM TABS AND SLIDES //
   document
@@ -70,9 +71,19 @@ productTabContainer.addEventListener('click', (event) => {
   );
 
   // ___ MOVE LINE SELECTOR UNDER ACTIVE TAB //
-  if (clicked.dataset.tab === '1') {
-    lineSelector.style.transform = `translateX(${100 * clicked.dataset.tab}%)`;
+  if (curSlide === '1') {
+    lineSelector.style.transform = `translateX(0rem)`;
   }
+
+    if (curSlide === "2") {
+      lineSelector.style.transform = `translateX(100%)`;
+    }
+  
+    if (curSlide === "3") {
+      lineSelector.style.transform = `translateX(200%)`;
+    }
+
+  
   
 
   // ___ ADD ACTIVE CLASS FROM TABS AND SLIDES //
