@@ -53,7 +53,18 @@ closeSearchBtn.addEventListener('click', (e) => {
 
 const productTabContainer = document.querySelector(".product-slider-tabs");
 const productSlides = document.querySelectorAll(".product-collection");
-const lineSelector = document.querySelector('.line-selector')
+const lineSelector = document.querySelector('.line-selector');
+
+const setSelectorLine = function () {
+  const firstTab = productTabContainer.querySelector(':first-child');
+  lineSelector.style.display = "block";
+  lineSelector.style.width = `${
+    firstTab.offsetWidth - firstTab.offsetWidth / 2
+  }px`;
+  lineSelector.style.left = `${firstTab.offsetLeft}px`;
+}
+
+setSelectorLine()
 
 productTabContainer.addEventListener('click', (event) => {
   const clicked = event.target.closest(".product-slider-tab");
@@ -67,32 +78,10 @@ productTabContainer.addEventListener('click', (event) => {
   productSlides.forEach((slide) =>
     slide.classList.remove("product-collection--active")
   );
-
-
   //////////////////////////////////////
-  let screenWidth = window.innerWidth;
-  // let elementWidth = element.offsetWidth;
-  console.log('current screen width', screenWidth)
-  console.log('width of selected tab', clicked.offsetWidth);
   // ___ MOVE LINE SELECTOR UNDER ACTIVE TAB //
-  if (curSlide === '1') {
-    lineSelector.style.transform = `translateX(0rem)`;
-    lineSelector.style.width = `${clicked.offsetWidth}px`;
-  }
-
-    if (curSlide === "2") {
-      lineSelector.style.transform = `translateX(100%)`;
-      lineSelector.style.width = `${clicked.offsetWidth}px`;
-    }
-  
-    if (curSlide === "3") {
-      lineSelector.style.transform = `translateX(200%)`;
-      lineSelector.style.width = `400px`;
-    }
-
-  
-  
-
+    lineSelector.style.width = `${clicked.offsetWidth - clicked.offsetWidth / 2}px`;
+    lineSelector.style.left = `${clicked.offsetLeft}px`;
   // ___ ADD ACTIVE CLASS FROM TABS AND SLIDES //
   document
     .querySelector(`.product-slider-tab[data-tab="${clicked.dataset.tab}"]`)
