@@ -1077,15 +1077,15 @@ button {
 
 .product-slider-products {
   position: relative;
-  min-width: 100%;
+  width: 100%;
   min-height: 60rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .product-collection {
-  min-width: 100%;
+  width: 100%;
   display: none;
   align-items: center;
   justify-content: center;
@@ -1169,6 +1169,7 @@ overflow-x: auto;
   }
 
   .product-collection {
+    width: unset;
     min-width: 100%;
     display: flex;
   }
