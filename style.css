@@ -49,6 +49,29 @@ _____*/
   --box-shadow: -2px 13px 23px -3px rgba(0, 0, 0, 0.44);
 }
 
+/*  ___ CUSTOM SCROLLBAR  _____*/
+::-webkit-scrollbar {
+  width: 1rem;
+  height: .5rem;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vw;
+  margin-block: 1rem;
+  background-color: var(--color-body-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100vw;
+  background-color: var(--color-primary);
+}
+
+@supports (scrollbar-color: red blue) {
+  * {
+    scrollbar-color: var(--color-body-bg) var(--color-primary);
+  }
+}
+
 /*  ___ GLOBAL RESET  _____*/
 
 *,
