@@ -113,7 +113,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   background: var(--color-body-bg);
   color: #fff;
   /*___ PARALLAX EFFECT BELOW ____*/
@@ -1077,7 +1077,7 @@ button {
 
 .product-slider-products {
   position: relative;
-  width: 100%;
+  min-width: 100%;
   min-height: 60rem;
   display: flex;
   align-items: center;
@@ -1085,7 +1085,7 @@ button {
 }
 
 .product-collection {
-  width: 100%;
+  min-width: 100%;
   display: none;
   align-items: center;
   justify-content: center;
@@ -1162,15 +1162,34 @@ button {
 @media (max-width: 35em) {
 
   .product-slider-products { 
-    width: 200%;
-    background-color: red;
+      display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 200%;
+overflow-x: auto;
   }
 
   .product-collection {
-overflow-x: scroll;
+    min-width: 100%;
+    display: flex;
   }
  
 } 
+
+.product-slider-product {
+  margin: 1rem;
+  height: 55rem;
+  width: 45rem;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background-color: rgb(72, 72, 72);
+  box-shadow: var(--box-shadow);
+  -webkit-box-shadow: var(--box-shadow);
+  -moz-box-shadow: var(--box-shadow);
+  border-radius: 2px;
+  overflow: hidden; */
+}
 
 /* _____________ FOOTER ________________________________*/
 
